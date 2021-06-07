@@ -25,7 +25,6 @@ export default class DiceContainer extends React.Component {
 	}
 
 	handleRollClick = () => {
-		console.log(this.state.roll);
 		if (this.state.gameOver) {
 			this.newGame();
 		} else if (this.state.roll === 3 && this.state.tableClicked) {
@@ -96,7 +95,6 @@ export default class DiceContainer extends React.Component {
 			gameOver: true,
 			actionText: "Partie terminée ! Score total : " + finalScore
 		});
-		console.log(finalScore);
 	}
 
 	render() {

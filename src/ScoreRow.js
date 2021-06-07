@@ -12,12 +12,14 @@ export default class ScoreRow extends React.Component {
 
 
 	click = () => {
-		if (!this.props.gameState.tableClicked && !this.state.used && !this.props.readonly) {
-			var score = this.computeScore()
-			this.setState({used: true, score:score});
-			this.props.addScore(score);
-			this.props.handleScoreClick();
-		}	
+		//if (this.props.name === "Yahtzee" && this.props.gameState.numberOfYahtzees > 1) {
+			if (!this.props.gameState.tableClicked && !this.state.used && !this.props.readonly) {
+				var score = this.computeScore()
+				this.setState({used: true, score:score});
+				this.props.addScore(score);
+				this.props.handleScoreClick();
+			}	
+		//}
 	}
 
 	cursorOn = () => {

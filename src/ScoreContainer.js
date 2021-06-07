@@ -56,7 +56,7 @@ export default class ScoreContainer extends React.Component {
 			upperScores: [],
 			lowerScores: [],
 			bonus: false,
-			bonusYahtzee: 0,
+			numberOfYahtzees: 0,
 			upperTotal: 0,
 			lowerTotal: 0,
 			upperComplete: false,
