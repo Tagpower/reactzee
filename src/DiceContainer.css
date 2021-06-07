@@ -1,0 +1,22 @@
+.dice-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1.5em;
+	cursor: pointer;
+}
+
+.dice-bar img {
+	display: block;
+	width: 100px;
+	height: auto;
+}
+
+.dice-bar > .free {
+	filter: brightness(1);
+	transition: 0.3s;
+}
+.dice-bar > .hold {
+	filter: brightness(0.80) sepia(1) saturate(10000%) hue-rotate(60deg);
+	transition: 0.3s;
+}
