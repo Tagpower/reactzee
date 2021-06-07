@@ -17,7 +17,7 @@ export default class DiceContainer extends React.Component {
 	}
 
 	toggleDieHold = (id) => {
-		if (this.state.roll !== 0 && this.state.roll < 3 && !this.state.tableClicked) {
+		if (this.state.roll > 0 && this.state.roll < 3 && !this.state.tableClicked) {
 			let holds = this.state.hold
 			holds[id] = !holds[id]
 			this.setState({hold: holds});
@@ -25,12 +25,17 @@ export default class DiceContainer extends React.Component {
 	}
 
 	handleRollClick = () => {
+		console.log(this.state.roll);
 		if (this.state.gameOver) {
 			this.newGame();
 		} else if (this.state.roll === 3 && this.state.tableClicked) {
 			this.newTurn();
 		} else if (this.state.roll !== 3) {
-			this.newRoll();
+			if (!this.state.tableClicked) {
+				this.newRoll();
+			} else {
+				this.newTurn();
+			}
 		}
 	}
 
@@ -64,7 +69,6 @@ export default class DiceContainer extends React.Component {
 			() => {if (this.state.roll === 3) {
 				this.setState({actionText: "Choisissez une ligne", tableClicked:false, hold: [false, false, false, false, false]});
 			}
-			console.log(this.state.tableClicked);
 		});
 
 	}
