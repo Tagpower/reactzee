@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reactzee/static/css/main.a50b1919.chunk.css",
-    "main.js": "/reactzee/static/js/main.4b398230.chunk.js",
-    "main.js.map": "/reactzee/static/js/main.4b398230.chunk.js.map",
+    "main.js": "/reactzee/static/js/main.18d4981e.chunk.js",
+    "main.js.map": "/reactzee/static/js/main.18d4981e.chunk.js.map",
     "runtime-main.js": "/reactzee/static/js/runtime-main.4620ece7.js",
     "runtime-main.js.map": "/reactzee/static/js/runtime-main.4620ece7.js.map",
     "static/js/2.1b6ef0fc.chunk.js": "/reactzee/static/js/2.1b6ef0fc.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.4620ece7.js",
     "static/js/2.1b6ef0fc.chunk.js",
     "static/css/main.a50b1919.chunk.css",
-    "static/js/main.4b398230.chunk.js"
+    "static/js/main.18d4981e.chunk.js"
   ]
 }
