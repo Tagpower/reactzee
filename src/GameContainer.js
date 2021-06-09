@@ -75,7 +75,7 @@ export default class GameContainer extends React.Component {
 		let newNumbers = [...this.state.numbers];
 		for (var i=0; i<5; i++) {
 			if (!this.state.hold[i]) {
-				newNumbers[i] = Math.floor(Math.random()*2)+1;
+				newNumbers[i] = Math.floor(Math.random()*6)+1;
 			}
 		}
 		this.setState({numbers: newNumbers});
