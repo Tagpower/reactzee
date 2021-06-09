@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/reactzee/static/css/main.9c6ec3ab.chunk.css",
-    "main.js": "/reactzee/static/js/main.c1962a97.chunk.js",
-    "main.js.map": "/reactzee/static/js/main.c1962a97.chunk.js.map",
+    "main.css": "/reactzee/static/css/main.a50b1919.chunk.css",
+    "main.js": "/reactzee/static/js/main.a1f035ce.chunk.js",
+    "main.js.map": "/reactzee/static/js/main.a1f035ce.chunk.js.map",
     "runtime-main.js": "/reactzee/static/js/runtime-main.4620ece7.js",
     "runtime-main.js.map": "/reactzee/static/js/runtime-main.4620ece7.js.map",
-    "static/js/2.0f4157e6.chunk.js": "/reactzee/static/js/2.0f4157e6.chunk.js",
-    "static/js/2.0f4157e6.chunk.js.map": "/reactzee/static/js/2.0f4157e6.chunk.js.map",
+    "static/js/2.1b6ef0fc.chunk.js": "/reactzee/static/js/2.1b6ef0fc.chunk.js",
+    "static/js/2.1b6ef0fc.chunk.js.map": "/reactzee/static/js/2.1b6ef0fc.chunk.js.map",
     "static/js/3.08565f9b.chunk.js": "/reactzee/static/js/3.08565f9b.chunk.js",
     "static/js/3.08565f9b.chunk.js.map": "/reactzee/static/js/3.08565f9b.chunk.js.map",
     "index.html": "/reactzee/index.html",
-    "static/css/main.9c6ec3ab.chunk.css.map": "/reactzee/static/css/main.9c6ec3ab.chunk.css.map",
-    "static/js/2.0f4157e6.chunk.js.LICENSE.txt": "/reactzee/static/js/2.0f4157e6.chunk.js.LICENSE.txt",
+    "static/css/main.a50b1919.chunk.css.map": "/reactzee/static/css/main.a50b1919.chunk.css.map",
+    "static/js/2.1b6ef0fc.chunk.js.LICENSE.txt": "/reactzee/static/js/2.1b6ef0fc.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/reactzee/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4620ece7.js",
-    "static/js/2.0f4157e6.chunk.js",
-    "static/css/main.9c6ec3ab.chunk.css",
-    "static/js/main.c1962a97.chunk.js"
+    "static/js/2.1b6ef0fc.chunk.js",
+    "static/css/main.a50b1919.chunk.css",
+    "static/js/main.a1f035ce.chunk.js"
   ]
 }
