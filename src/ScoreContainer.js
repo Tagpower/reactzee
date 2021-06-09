@@ -47,7 +47,7 @@ export default class ScoreContainer extends React.Component {
 		this.setState({lowerScores: [...this.state.lowerScores, score]},
 			() => {
 				if (yahtzee === true) {
-					this.setState({numberOfBonusYahtzees: this.state.numberOfBonusYahtzees+1}, () => {checkIfComplete(); console.log("Yahtzee bonus dans ScoreContainer : " + this.state.numberOfBonusYahtzees)});
+					this.setState({numberOfBonusYahtzees: this.state.numberOfBonusYahtzees+1}, () => checkIfComplete());
 				}
 				checkIfComplete()
 			}

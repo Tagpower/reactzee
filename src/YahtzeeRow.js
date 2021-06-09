@@ -32,7 +32,7 @@ export default class YahtzeeRow extends ScoreRow {
 					() => this.setState({bonusDisplayed: this.state.numberOfBonusYahtzees*100})
 				);
 			}
-			this.setState({bonusDisplayed: this.state.numberOfBonusYahtzees*100}, () => console.log("nombre de yahtzee bonus : " + this.state.numberOfBonusYahtzees))
+			this.setState({bonusDisplayed: this.state.numberOfBonusYahtzees*100});
 		}
 	}
 	
@@ -53,7 +53,6 @@ export default class YahtzeeRow extends ScoreRow {
 	}
 
 	checkIfYahtzee(dice) {
-		console.log(this.countFaces(dice));
 		return Object.values(this.countFaces(dice)).some(n => n >= 5);
 	}
 
@@ -66,7 +65,6 @@ export default class YahtzeeRow extends ScoreRow {
 	}
 	
 	render() {
-		console.log(this.state);
 		return (
 			<tr className={(this.state.used ? "used" : "")} >
 				<td className="score-name">{this.props.name}</td>
