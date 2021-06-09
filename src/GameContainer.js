@@ -1,10 +1,10 @@
 import React from 'react';
 import Die from "./Die";
-import "./DiceContainer.css"
+import "./GameContainer.css"
 import RollButton from './RollButton';
 import ScoreContainer from './ScoreContainer'
 
-export default class DiceContainer extends React.Component {
+export default class GameContainer extends React.Component {
 
 	state = {
 		roll: 0,
@@ -41,7 +41,6 @@ export default class DiceContainer extends React.Component {
 	newGame = () => {
 		this.setState({
 			roll: 0,
-			numbers: [1,1,1,1,1],
 			hold: [false, false, false, false, false],
 			rollClicked: true,
 			tableClicked: false,
@@ -76,7 +75,7 @@ export default class DiceContainer extends React.Component {
 		let newNumbers = [...this.state.numbers];
 		for (var i=0; i<5; i++) {
 			if (!this.state.hold[i]) {
-				newNumbers[i] = Math.floor(Math.random()*6)+1;
+				newNumbers[i] = Math.floor(Math.random()*2)+1;
 			}
 		}
 		this.setState({numbers: newNumbers});

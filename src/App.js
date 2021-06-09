@@ -1,6 +1,6 @@
 import logo from './icons/logo.svg';
 import './App.css';
-import DiceContainer from './DiceContainer';
+import GameContainer from './GameContainer';
 
 function App() {
   return (
@@ -8,10 +8,10 @@ function App() {
 
       <h2>Yahtzee du pauvre</h2>
 
-      <DiceContainer />
+      <GameContainer />
 
       <footer className="App-footer">
-      <p>Fait avec React </p>
+      <p>Fait avec React par <a href="https://github.com/Tagpower/reactzee">Clément Bauchet</a></p>
         <a
           className="App-link"
           href="https://reactjs.org"

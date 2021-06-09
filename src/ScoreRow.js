@@ -12,8 +12,8 @@ export default class ScoreRow extends React.Component {
 
 
 	click = () => {
-		//if (this.props.name === "Yahtzee" && this.props.gameState.numberOfYahtzees > 1) {
-			if (!this.props.gameState.tableClicked && !this.state.used && !this.props.readonly) {
+		//if (this.props.name === "Yahtzee" && this.props.gameState. > 1) {
+			if (!this.props.gameState.tableClicked && !this.state.used) {
 				var score = this.computeScore()
 				this.setState({used: true, score:score});
 				this.props.addScore(score);
@@ -23,13 +23,13 @@ export default class ScoreRow extends React.Component {
 	}
 
 	cursorOn = () => {
-		if(this.props.gameState.roll > 0 && !this.props.gameState.tableClicked && !this.state.used && !this.props.readonly) {
+		if(this.props.gameState.roll > 0 && !this.props.gameState.tableClicked && !this.state.used) {
 			this.setState({scoreDisplayed: this.computeScore()});
 		}
 	}
 
 	cursorOff = () => {
-		if(this.props.gameState.roll > 0 && !this.props.gameState.tableClicked && !this.state.used && !this.props.readonly) {
+		if(this.props.gameState.roll > 0 && !this.props.gameState.tableClicked && !this.state.used) {
 			this.setState({scoreDisplayed: ""});
 		}
 	}
@@ -118,7 +118,7 @@ export default class ScoreRow extends React.Component {
 	
 	render() {
 		return (
-			<tr className={(this.props.readonly ? "readonly" : (this.state.used ? "used" : ""))} >
+			<tr className={(this.state.used ? "used" : "")} >
 				<td className="score-name">{this.props.name}</td>
 				<td className="score-desc">{this.props.desc}</td>
 				<td className="score-cell" onClick={this.click} onMouseOver={this.cursorOn} onMouseOut={this.cursorOff}>{this.state.scoreDisplayed}</td>

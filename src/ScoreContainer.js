@@ -2,6 +2,7 @@ import React from 'react';
 import "./ScoreContainer.css"
 import ScoreRow from './ScoreRow'
 import TotalRow from './TotalRow';
+import YahtzeeRow from './YahtzeeRow';
 
 export default class ScoreContainer extends React.Component {
 
@@ -9,7 +10,7 @@ export default class ScoreContainer extends React.Component {
 		upperScores: [],
 		lowerScores: [],
 		bonus: false,
-		bonusYahtzee: 0,
+		numberOfBonusYahtzees: 0,
 		upperTotal: 0,
 		lowerTotal: 0,
 		upperComplete: false,
@@ -34,13 +35,21 @@ export default class ScoreContainer extends React.Component {
 		);
 	}
 
-	addScoreLower(score) {
+	addScoreLower(score, yahtzee) {
+		var self = this;
+		const checkIfComplete = function() {
+			if(self.state.lowerScores.length >= 7 + self.state.numberOfBonusYahtzees) {
+				self.setState({lowerTotal: self.state.lowerScores.reduce((a,b) => a+b), lowerComplete:true},
+				() => self.checkGameOver());
+			}
+		}
+
 		this.setState({lowerScores: [...this.state.lowerScores, score]},
 			() => {
-				if(this.state.lowerScores.length >= 7) {
-					this.setState({lowerTotal: this.state.lowerScores.reduce((a,b) => a+b), lowerComplete:true},
-					() => this.checkGameOver());
+				if (yahtzee === true) {
+					this.setState({numberOfBonusYahtzees: this.state.numberOfBonusYahtzees+1}, () => {checkIfComplete(); console.log("Yahtzee bonus dans ScoreContainer : " + this.state.numberOfBonusYahtzees)});
 				}
+				checkIfComplete()
 			}
 		);
 	}
@@ -51,23 +60,10 @@ export default class ScoreContainer extends React.Component {
 		}
 	}
 
-	reset() {
-		this.setState({
-			upperScores: [],
-			lowerScores: [],
-			bonus: false,
-			numberOfYahtzees: 0,
-			upperTotal: 0,
-			lowerTotal: 0,
-			upperComplete: false,
-			lowerComplete: false
-		});
-	}
-
 	render() {
 		return (
 			<div className="score-grid">
-				<table className="highlight">
+				<table>
 					<thead>
 						<tr>
 							<th colSpan="3">
@@ -87,7 +83,7 @@ export default class ScoreContainer extends React.Component {
 					</tbody>
 				</table>
 
-				<table className="highlight">
+				<table>
 					<thead>
 						<tr>
 							<th colSpan="3">
@@ -96,13 +92,14 @@ export default class ScoreContainer extends React.Component {
 						</tr>
 					</thead>
 					<tbody>
-						<ScoreRow name="Brelan" 		desc="Somme des dés" gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>
-						<ScoreRow name="Carré" 			desc="Somme des dés" gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>
-						<ScoreRow name="Full" 			desc="25 points" 	 gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>
-						<ScoreRow name="Petite suite" 	desc="30 points" 	 gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>
-						<ScoreRow name="Grande suite" 	desc="40 points" 	 gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>  					
-						<ScoreRow name="Yahtzee" 		desc="50 points" 	 gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/> 
-						<ScoreRow name="Chance" 		desc="Somme des dés" gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/> 
+						<ScoreRow name="Brelan" 	  tip="3 dés ou plus égaux"	desc="Somme des dés" gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>
+						<ScoreRow name="Carré" 		  tip="4 dés ou plus égaux"	desc="Somme des dés" gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>
+						<ScoreRow name="Full" 		  tip="3 dés égaux + 2 dés égaux"	desc="25 points" 	 gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>
+						<ScoreRow name="Petite suite" tip="4 dés consécutifs"	desc="30 points" 	 gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>
+						<ScoreRow name="Grande suite" tip="5 dés consécutifs"	desc="40 points" 	 gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>  					
+						{/* <ScoreRow name="Yahtzee" 		desc="50 points" 	 gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/>  */}
+						<YahtzeeRow name="Yahtzee" 	  tip="5 dés égaux"			desc="50 points" 	 gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/> 
+						<ScoreRow name="Chance" 	  tip="Somme des dés"	desc="Somme des dés" gameState={this.props.gameState} addScore={this.addScoreLower.bind(this)} handleScoreClick={this.props.handleScoreClick}/> 
 						<TotalRow name="Total" desc="partie inférieure" scoreDisplayed={this.state.lowerComplete ? this.state.lowerTotal : ""}  />
 					</tbody>
 
