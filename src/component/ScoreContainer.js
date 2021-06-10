@@ -1,5 +1,5 @@
 import React from 'react';
-import "./ScoreContainer.css"
+import "../style/ScoreContainer.css"
 import ScoreRow from './ScoreRow'
 import TotalRow from './TotalRow';
 import YahtzeeRow from './YahtzeeRow';

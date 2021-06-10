@@ -8,8 +8,7 @@
 
 .dice-bar img {
 	display: block;
-	width: 100px;
-	height: auto;
+	width: 10vmin;
 }
 
 .dice-bar > .free {

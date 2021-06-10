@@ -1,10 +1,12 @@
 import React from 'react';
 import Die from "./Die";
-import "./GameContainer.css"
+import "../style/GameContainer.css"
 import RollButton from './RollButton';
 import ScoreContainer from './ScoreContainer'
 
 export default class GameContainer extends React.Component {
+
+	MAX_ROLLS = 3;
 
 	state = {
 		roll: 0,
@@ -17,7 +19,7 @@ export default class GameContainer extends React.Component {
 	}
 
 	toggleDieHold = (id) => {
-		if (this.state.roll > 0 && this.state.roll < 3 && !this.state.tableClicked) {
+		if (this.state.roll > 0 && this.state.roll < this.MAX_ROLLS && !this.state.tableClicked) {
 			let holds = this.state.hold
 			holds[id] = !holds[id]
 			this.setState({hold: holds});
@@ -27,9 +29,9 @@ export default class GameContainer extends React.Component {
 	handleRollClick = () => {
 		if (this.state.gameOver) {
 			this.newGame();
-		} else if (this.state.roll === 3 && this.state.tableClicked) {
+		} else if (this.state.roll === this.MAX_ROLLS && this.state.tableClicked) {
 			this.newTurn();
-		} else if (this.state.roll !== 3) {
+		} else if (this.state.roll !== this.MAX_ROLLS) {
 			if (!this.state.tableClicked) {
 				this.newRoll();
 			} else {
@@ -64,7 +66,7 @@ export default class GameContainer extends React.Component {
 	newRoll = () => {
 		this.rollDice()
 		this.setState({roll: this.state.roll+1, actionText: "Lancer " + (this.state.roll+1)},
-			() => {if (this.state.roll === 3) {
+			() => {if (this.state.roll === this.MAX_ROLLS) {
 				this.setState({actionText: "Choisissez une ligne", tableClicked:false, hold: [false, false, false, false, false]});
 			}
 		});
@@ -110,7 +112,7 @@ export default class GameContainer extends React.Component {
 		</div>
 		<p>{this.state.actionText}</p>
 
-		<RollButton gameState={this.state} handleRollClick={this.handleRollClick} />		
+		<RollButton gameState={this.state} handleRollClick={this.handleRollClick} maxRolls={this.MAX_ROLLS}/>		
 
       	<ScoreContainer gameState={this.state} handleScoreClick={this.handleScoreClick} handleGameOver={this.handleGameOver} key={this.state.scoreContainerKey} />
 

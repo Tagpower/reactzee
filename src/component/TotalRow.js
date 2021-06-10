@@ -1,5 +1,5 @@
 import React from 'react';
-import "./TotalRow.css"
+import "../style/TotalRow.css"
 
 export default class TotalRow extends React.Component {
 

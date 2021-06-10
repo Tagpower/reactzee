@@ -1,5 +1,5 @@
 import React from 'react';
-import "./ScoreRow.css"
+import "../style/ScoreRow.css"
 import ScoreRow from './ScoreRow';
 
 export default class YahtzeeRow extends ScoreRow {

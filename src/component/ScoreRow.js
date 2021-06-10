@@ -1,5 +1,5 @@
 import React from 'react';
-import "./ScoreRow.css"
+import "../style/ScoreRow.css"
 
 export default class ScoreRow extends React.Component {
 
@@ -12,14 +12,12 @@ export default class ScoreRow extends React.Component {
 
 
 	click = () => {
-		//if (this.props.name === "Yahtzee" && this.props.gameState. > 1) {
-			if (!this.props.gameState.tableClicked && !this.state.used) {
-				var score = this.computeScore()
-				this.setState({used: true, score:score});
-				this.props.addScore(score);
-				this.props.handleScoreClick();
-			}	
-		//}
+		if (!this.props.gameState.tableClicked && !this.state.used) {
+			var score = this.computeScore()
+			this.setState({used: true, score:score});
+			this.props.addScore(score);
+			this.props.handleScoreClick();
+		}
 	}
 
 	cursorOn = () => {
