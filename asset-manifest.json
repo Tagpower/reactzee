@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/reactzee/static/css/main.29635b96.chunk.css",
-    "main.js": "/reactzee/static/js/main.03447656.chunk.js",
-    "main.js.map": "/reactzee/static/js/main.03447656.chunk.js.map",
+    "main.css": "/reactzee/static/css/main.bd6c0d8c.chunk.css",
+    "main.js": "/reactzee/static/js/main.4ed31d07.chunk.js",
+    "main.js.map": "/reactzee/static/js/main.4ed31d07.chunk.js.map",
     "runtime-main.js": "/reactzee/static/js/runtime-main.8aa5cae2.js",
     "runtime-main.js.map": "/reactzee/static/js/runtime-main.8aa5cae2.js.map",
     "static/js/2.52fbb271.chunk.js": "/reactzee/static/js/2.52fbb271.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.430aec64.chunk.js": "/reactzee/static/js/3.430aec64.chunk.js",
     "static/js/3.430aec64.chunk.js.map": "/reactzee/static/js/3.430aec64.chunk.js.map",
     "index.html": "/reactzee/index.html",
-    "static/css/main.29635b96.chunk.css.map": "/reactzee/static/css/main.29635b96.chunk.css.map",
+    "static/css/main.bd6c0d8c.chunk.css.map": "/reactzee/static/css/main.bd6c0d8c.chunk.css.map",
     "static/js/2.52fbb271.chunk.js.LICENSE.txt": "/reactzee/static/js/2.52fbb271.chunk.js.LICENSE.txt",
     "static/media/linkedin.5871caf6.png": "/reactzee/static/media/linkedin.5871caf6.png",
     "static/media/logo.6ce24c58.svg": "/reactzee/static/media/logo.6ce24c58.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.8aa5cae2.js",
     "static/js/2.52fbb271.chunk.js",
-    "static/css/main.29635b96.chunk.css",
-    "static/js/main.03447656.chunk.js"
+    "static/css/main.bd6c0d8c.chunk.css",
+    "static/js/main.4ed31d07.chunk.js"
   ]
 }
