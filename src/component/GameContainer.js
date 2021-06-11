@@ -99,15 +99,17 @@ export default class GameContainer extends React.Component {
 	}
 
 	render() {
+		var clickable = (this.state.roll > 0 && this.state.roll < this.MAX_ROLLS && !this.state.tableClicked);
+
 		return (
 		<>
 		<div className="dice-container">
 			<div className="dice-bar">
-				<Die id={0} number={this.state.numbers[0]} hold={this.state.hold[0]} toggleDieHold={this.toggleDieHold} />
-				<Die id={1} number={this.state.numbers[1]} hold={this.state.hold[1]} toggleDieHold={this.toggleDieHold} />
-				<Die id={2} number={this.state.numbers[2]} hold={this.state.hold[2]} toggleDieHold={this.toggleDieHold} />
-				<Die id={3} number={this.state.numbers[3]} hold={this.state.hold[3]} toggleDieHold={this.toggleDieHold} />
-				<Die id={4} number={this.state.numbers[4]} hold={this.state.hold[4]} toggleDieHold={this.toggleDieHold} />
+				<Die id={0} number={this.state.numbers[0]} hold={this.state.hold[0]} toggleDieHold={this.toggleDieHold} clickable={clickable} />
+				<Die id={1} number={this.state.numbers[1]} hold={this.state.hold[1]} toggleDieHold={this.toggleDieHold} clickable={clickable} />
+				<Die id={2} number={this.state.numbers[2]} hold={this.state.hold[2]} toggleDieHold={this.toggleDieHold} clickable={clickable} />
+				<Die id={3} number={this.state.numbers[3]} hold={this.state.hold[3]} toggleDieHold={this.toggleDieHold} clickable={clickable} />
+				<Die id={4} number={this.state.numbers[4]} hold={this.state.hold[4]} toggleDieHold={this.toggleDieHold} clickable={clickable} />
 			</div>
 		</div>
 		<p>{this.state.actionText}</p>

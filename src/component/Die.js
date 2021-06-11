@@ -14,7 +14,7 @@ export default class Die extends React.Component {
 
 	render() {
 		const dieIcons = [icon1, icon2, icon3, icon4, icon5, icon6];
-		return <div className={`dice-container ${this.props.hold ? "hold" : "free"}`}>
+		return <div className={`dice-container ${this.props.hold ? "hold" : "free"} ${this.props.clickable ? "clickable" : ""}`}>
 			<img src={dieIcons[this.props.number-1]} onClick={this.holdDie} alt={this.props.number} />
 		</div>
 	}

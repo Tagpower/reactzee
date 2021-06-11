@@ -3,12 +3,17 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 1.5em;
-	cursor: pointer;
 }
 
 .dice-bar img {
 	display: block;
 	width: 10vmin;
+}
+
+.dice-bar .clickable img:hover {
+	cursor: pointer;
+	filter: opacity(0.7);
+	transition: 0.15s;
 }
 
 .dice-bar > .free {
