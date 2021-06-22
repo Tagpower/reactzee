@@ -16,6 +16,21 @@
 	transition: 0.15s;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+	.dice-bar .rolling {
+		animation: dice-roll 0.5s ease-out;
+	}
+}
+
+@keyframes dice-roll {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .dice-bar > .free {
 	filter: brightness(1);
 	transition: 0.3s;

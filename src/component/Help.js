@@ -22,8 +22,8 @@ export default class Help extends React.Component {
 							<p>Le Yahtzee est un jeu de dés où le but est de marquer le plus de points en réalisant des combinaisons.<br/> 
 								Vous pouvez lancer les dés jusqu'à 3 fois, et sélectionner les dés que vous voulez garder en cliquant dessus. Ensuite, vous devez choisir une combinaison parmi la liste.<br/>
 								<br/>
-								Dans la partie supérieure, vous gagnez des points selon le nombre de dés égaux au chiffre correspondant.<br/>
-								Dans la partie inférieure, vous gagnez des points si les dés correspondent à la combinaison choisie, autrement, la ligne ne vous rapporte aucun point.<br/>
+								Dans la partie mineure, vous gagnez des points selon le nombre de dés égaux au chiffre correspondant.<br/>
+								Dans la partie majeure, vous gagnez des points si les dés correspondent à la combinaison choisie, autrement, la ligne ne vous rapporte aucun point.<br/>
 								La partie se termine lorsque toutes les lignes ont été remplies.
 							</p>
 							<h4>
@@ -72,7 +72,7 @@ export default class Help extends React.Component {
 								Bonus :
 							</h4>
 							<p>
-								Si vous totalisez 63 points ou plus dans la partie supérieure, vous gagnez un bonus de 35 points. <br/>
+								Si vous totalisez 63 points ou plus dans la partie mineure, vous gagnez un bonus de 35 points. <br/>
 								Si vous avez déjà validé un Yahtzee et que vous en réussissez d'autres avant la fin, vous pouvez remplir la case bonus pour 100 points supplémentaires cumulables !
 							</p>
 						</div>				
